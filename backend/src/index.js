@@ -2,31 +2,14 @@ const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes')
 
-
-const app = express()
-
-
-
-
+//conexao com mongodb 
 mongoose.connect('mongodb+srv://admindbs:admindbs@mapecoins-rqnol.mongodb.net/week10?retryWrites=true&w=majority',
 {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
+
+const app = express()
 app.use(express.json())
 app.use(routes)
-
-// Métodos HTTP: GET, POST, PUT, DELETE
-
-//
-
-
-
-app.get('/', (request, response) =>{
-
-    return response.json({message: 'Hello OmniStack'})
-
-})
-
-
-app.listen(3333);
+app.listen(3333)
