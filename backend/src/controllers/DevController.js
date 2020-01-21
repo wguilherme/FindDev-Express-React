@@ -56,5 +56,19 @@ module.exports = {
 
         return response.json(dev)
     
-    }
+    },
+
+    async update (){
+        //todo
+        //atualizar somente 1 user
+        //nome, avatar, bio, coordinates
+        //não deixar atualizar github_username
+
+    },
+
+    async destroy(){
+        //todo
+        //deletar somente 1 user
+
+    },
 }
