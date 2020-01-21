@@ -3,7 +3,18 @@ const axios = require('axios')
 const Dev = require('../models/Dev')
 
 
+// index, show, store, update, destory
+// index -> lista, show -> único
+
 module.exports = {
+    //função list Index GET
+
+    async index (request, response){
+        const devs = await Dev.find()
+        return response.json(devs)
+    },
+
+    //função store POST
     async store (request, response) {
         const { github_username, techs, latitude,  longitude } = request.body;
 
@@ -37,7 +48,7 @@ module.exports = {
 
         } else {
             response.status(400);
-            response.send('O Username do Github informado já está cadastrado');
+            response.json({error: 'O Username do Github informado já está cadastrado'});
         }
 
         return response.json(dev)

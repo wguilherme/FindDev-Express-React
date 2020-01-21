@@ -8,7 +8,7 @@ mongoose.connect('mongodb+srv://admindbs:admindbs@mapecoins-rqnol.mongodb.net/we
     useNewUrlParser: true,
     useUnifiedTopology: true,
     //remove warning de collection.ensureIndex is deprecated
-    useCreateIndex: true
+    // useCreateIndex: true
 })
 
 const app = express()
