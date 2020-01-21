@@ -6,7 +6,9 @@ const routes = require('./routes')
 mongoose.connect('mongodb+srv://admindbs:admindbs@mapecoins-rqnol.mongodb.net/week10?retryWrites=true&w=majority',
 {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    //remove warning de collection.ensureIndex is deprecated
+    useCreateIndex: true
 })
 
 const app = express()
