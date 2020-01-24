@@ -1,11 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes')
+const cors = require('cors')
 require('dotenv').config
 // ({path: '../../config.env'})
 
-
-//dotenv
+const app = express()
 
 
 //conexao com mongodb 
@@ -16,8 +16,9 @@ mongoose.connect('mongodb+srv://admindbs:admindbs@mapecoins-rqnol.mongodb.net/we
     //remove warning de collection.ensureIndex is deprecated
     // useCreateIndex: true
 })
-
-const app = express()
+app.use(cors())
+// app.use(cors({origin: 'http://localhost:3000'}))
 app.use(express.json())
 app.use(routes)
+
 app.listen(3333)
